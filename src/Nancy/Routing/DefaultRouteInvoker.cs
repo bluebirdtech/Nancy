@@ -53,7 +53,9 @@ namespace Nancy.Routing
 
                     try
                     {
-                        var response = this.negotiator.NegotiateResponse(returnResult, context);
+                        // Xamarin.iOS support.  For some reason Xamarin.iOS throws when calling NegotiateResponse.  Probably due to poor dynamic support.
+                        // Assign directly when the result is already a Response to avoid this.  Api methods need to take care to return a response directly.
+                        var response = returnResult as Response ?? this.negotiator.NegotiateResponse(returnResult, context);
 
                         tcs.SetResult(response);
                     }
