@@ -29,7 +29,7 @@
 #define RESOLVE_OPEN_GENERICS               // Platform supports resolving open generics
 #define READER_WRITER_LOCK_SLIM             // Platform supports ReaderWriterLockSlim
 
-// Xamarin.iOS support.  Xamarin.iOS doesn't like dynamic compilation.
+// Xamarin.iOS support.  Dynamic compilation is not well supported.
 #undef COMPILED_EXPRESSIONS
 
 //// NETFX_CORE

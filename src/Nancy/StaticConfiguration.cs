@@ -64,7 +64,8 @@ namespace Nancy
         {
             get
             {
-                return isRunningDebug ?? (bool)(isRunningDebug = GetDebugMode());
+                return false;  // Xamarin.iOS support.  This uses assembly scanning which is too slow.
+                //return isRunningDebug ?? (bool)(isRunningDebug = GetDebugMode());
             }
         }
 

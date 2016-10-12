@@ -15,6 +15,8 @@ namespace Nancy.Bootstrapper
     {
         static AppDomainAssemblyTypeScanner()
         {
+            // Xamarin.iOS support.  AppDomainAssemblyTypeScanner is too slow, so ensure we don't use it.
+            throw new NotSupportedException("Use of AppDomainAssemblyTypeScanner is not supported due to poor performance.");
             LoadAssembliesWithNancyReferences();
         }
 

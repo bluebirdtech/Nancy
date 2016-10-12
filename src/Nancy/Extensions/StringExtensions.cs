@@ -17,9 +17,8 @@ namespace Nancy.Extensions
         /// A regular expression used to manipulate parameterized route segments.
         /// </summary>
         /// <value>A <see cref="Regex"/> object.</value>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        private static readonly Regex ParameterExpression =
-            new Regex(@"{(?<name>[A-Za-z0-9_]*)(?:\?(?<default>[A-Za-z0-9_-]*))?}", RegexOptions.Compiled);
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)] static readonly Regex ParameterExpression =
+            new Regex(@"{(?<name>[A-Za-z0-9_]*)(?:\?(?<default>[A-Za-z0-9_-]*))?}");//, RegexOptions.Compiled);  // Xamarin.iOS support.  Compilation is not supported & startup speed is critical.
 
         /// <summary>
         /// Extracts information about the parameters in the <paramref name="segment"/>.
